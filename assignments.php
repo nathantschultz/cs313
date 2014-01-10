@@ -45,7 +45,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://cs313.nathantschultz.com">Home</a></li>
-            <li><a href="http://ec2-54-193-16-186.us-west-1.compute.amazonaws.com/assignments.php">Assignments</a></li>
+            <li><a href="http://cs313.nathantschultz.com/assignments.php">Assignments</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -55,19 +55,9 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Nathan Schultz's Website</h1>
+        <h1>Coming Soon...</h1>
         <p>This is a site built using bootstrap.</p>
       </div>
-
-
-	  <div class="page-header">
-        <h1>About Me</h1>
-      </div>
-      <div class="alert alert-success">
-        <strong>Hello!</strong> I am a web design and development student at Brigham Young University-Idaho. I have just over a year left. I have been married to Aimee, my beautiful wife, for two years in september. We just had Wendy, a wonderful addition to our family. 
-      </div>
-
-	  <img src="/images/fam.jpg" data-src="holder.js/200x200" class="img-thumbnail" alt="my family">
 
 
 
