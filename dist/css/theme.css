@@ -1,0 +1,7 @@
+.navbar div:hover {
+	background-color: black;
+}
+
+html {
+	background-color: black !important;
+}
