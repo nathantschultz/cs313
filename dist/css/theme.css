@@ -1,7 +1,4 @@
-.navbar div:hover {
+.jumbotron:hover, .jumbotron:hover h1, .jumbotron:hover p  {
 	background-color: black;
-}
-
-html {
-	background-color: black !important;
+	color: white;
 }
