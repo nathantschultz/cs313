@@ -7,8 +7,8 @@
 <body>
 <?php
 
-for ($i =0; $i < 10; $i++){
-	echo "<div id='$i'>DIV $i<div>";
+foreach ($list as $key => $value){
+	echo "<div id='$key'>DIV $value <div>";
 }
 	
 ?>
