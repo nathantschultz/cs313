@@ -9,8 +9,8 @@
 		<h1>Our form</h1>
 		
 		<form action="results.php" method="post">
-		Name:<input type="text" name="name">
-		Email:<input type="text" name="email"> 
+		Name:<input type="text" name="name"><br />
+		Email:<input type="text" name="email"><br /> 
 		Major:
 		<input type="radio" name="major" value="Computer Science">Computer Science<br/>
 		<input type="radio" name="major" value="Web Development and Design">Web Development and Design<br/>
