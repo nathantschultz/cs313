@@ -21,7 +21,7 @@
 		}
 		echo "</ul>";
 		
-		echo "<br/>Other Comments:" . $_POST["comments"];
+		echo "Other Comments: " . $_POST["comments"];
 		
 		?>
 	</body>
