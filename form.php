@@ -27,7 +27,7 @@
 		<input type="checkbox" name="places[]" value="Antarctica">Antarctica<br/>
 		<br>
 		Any other comments?
-		<input type="textarea" name="comments"><br/>
+		<textarea name="comments">add comments here...</textarea><br/>
 		<input type="submit" value="Submit">
 		</form>
 
