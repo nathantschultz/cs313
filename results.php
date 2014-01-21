@@ -5,12 +5,12 @@
 		
 	</head>
 	<body>
-		<h1>Your Information
+		<h1>Your Information</h1>
 		
 		<?php
-		echo "Name: " . $_POST["name"];
-		echo "Email: " . $_POST["email"];
-		echo "Major: " . $_POST["major"];
+		echo "Name: " . $_POST["name"] . "<br />";
+		echo "Email: " . $_POST["email"]. "<br />";
+		echo "Major: " . $_POST["major"]. "<br />";
 		echo "<br />Places visited:<br />";
 		
 		$places = $_POST["places"];
