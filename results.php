@@ -8,12 +8,12 @@
 		<h1>Your Information</h1>
 		
 		<?php
-		echo "Name: " . $_POST["name"] . "<br />";
-		echo "Email: " . $_POST["email"]. "<br />";
-		echo "Major: " . $_POST["major"]. "<br />";
+		echo "Name: " . htmlspecialchars($_POST["name"]) . "<br />";
+		echo "Email: " . htmlspecialchars($_POST["email"]). "<br />";
+		echo "Major: " . htmlspecialchars($_POST["major"]). "<br />";
 		echo "<br />Places visited:<br />";
 		
-		$places = $_POST["places"];
+		$places = htmlspecialchars($_POST["places"]);
 
 		echo "<ul>";		
 		foreach ($places as $place){
@@ -21,7 +21,7 @@
 		}
 		echo "</ul>";
 		
-		echo "Other Comments: " . $_POST["comments"];
+		echo "Other Comments: " . htmlspecialchars($_POST["comments"]);
 		
 		?>
 	</body>
