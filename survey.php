@@ -32,5 +32,7 @@
 		<br>
 		<input type="submit" value="Submit">
 		</form>
+		
+		<a href="cs313.nathantschultz.com/results2.php">View Results</a>
 	</body>
 </html>
