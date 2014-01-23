@@ -1,9 +1,13 @@
 <?php
 if (isset($_COOKIE['count'])){
-	
+	$x = $_COOKIE['count'];
 } else {
-	setcookie("count", $x, time()+600);
+	$x = 0;
 }
+
+$x++;
+
+setcookie("count", $x, time()+600);
 
 ?>
 
@@ -17,9 +21,7 @@ if (isset($_COOKIE['count'])){
 		<h1>Cookie Page</h1>
 	<?php
 	
-	$_COOKIE["$x"] += 1; 
-	
-	echo $_COOKIE["$x"]; 
+	echo $_COOKIE["count"]; 
 	
 	?>
 		
