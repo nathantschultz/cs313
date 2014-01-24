@@ -8,7 +8,7 @@ if (isset($_COOKIE['voted'])){
 setcookie("voted", $voted, time()+600);
 
 if ($voted) {
-	header('Location: /results2.php');
+	header('Location: http://cs313.nathantschultz.com/results2.php');
 }
 
 ?>
