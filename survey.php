@@ -8,7 +8,6 @@ if (isset($_COOKIE['voted'])){
 setcookie("voted", $voted, time()+600);
 
 if ($voted) {
-	include()
 	header('Location: /results2.php');
 }
 
