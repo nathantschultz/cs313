@@ -1,3 +1,19 @@
+<?php
+if (isset($_COOKIE['voted'])){
+	$voted = $_COOKIE['voted'];
+} else {
+	$voted = false;
+}
+
+setcookie("voted", $voted, time()+600);
+
+if ($voted) {
+	include()
+	header('Location: /results2.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,9 +46,10 @@
 		<input type="radio" name="browser" value="Chrome">Chrome<br/>
 		<input type="radio" name="browser" value="Firefox">Firefox<br/>
 		<br>
+		<input type="hidden" name="voted" value="true">
 		<input type="submit" value="Submit">
 		</form>
 		
-		<a href="cs313.nathantschultz.com/results2.php">View Results</a>
+		<a href="http://cs313.nathantschultz.com/results2.php">View Results</a>
 	</body>
 </html>

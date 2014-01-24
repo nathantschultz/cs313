@@ -34,8 +34,7 @@
 	
 	
 		fwrite($file, "New Content");
-	
-	
+		
 		fclose($file);
 	
 	?>
