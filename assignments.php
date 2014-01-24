@@ -55,7 +55,7 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Coming Soon...</h1>
+        <h1>Assignments</h1>
         <p>This is a site built using bootstrap.</p>
       </div>
 

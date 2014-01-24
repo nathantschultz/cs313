@@ -82,7 +82,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://cs313.nathantschultz.com">Home</a></li>
-            <li><a href="http://ec2-54-193-16-186.us-west-1.compute.amazonaws.com/assignments.php">Assignments</a></li>
+            <li><a href="http://cs313.nathantschultz.com/assignments.php">Assignments</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
