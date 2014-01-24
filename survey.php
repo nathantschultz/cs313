@@ -8,6 +8,7 @@ if (isset($_COOKIE['voted'])){
 setcookie("voted", $voted, time()+600);
 
 if ($voted) {
+	echo "redirect";
 	header('Location: http://cs313.nathantschultz.com/results2.php');
 }
 
