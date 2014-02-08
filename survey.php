@@ -1,7 +1,8 @@
 <?php
 	// Start session management with a persistent cookie
 	//$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
-	$lifetime = 60 * 60 * 24;                      // per-session cookie
+	$lifetime = 60 * 60 * 24; 
+	$lifetime = 0;                     // per-session cookie
 	session_set_cookie_params($lifetime, '/');	
 	
 	session_start();
@@ -82,7 +83,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://cs313.nathantschultz.com">Home</a></li>
-            <li><a href="http://cs313.nathantschultz.com/assignments.php">Assignments</a></li>
+            <li><a href="http://cs313.nathantschultz.com?action=assignments">Assignments</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

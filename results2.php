@@ -50,7 +50,7 @@ session_start();
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://cs313.nathantschultz.com">Home</a></li>
-            <li><a href="http://cs313.nathantschultz.com/assignments.php">Assignments</a></li>
+            <li><a href="http://cs313.nathantschultz.com?action=assignments">Assignments</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -76,12 +76,16 @@ session_start();
 			if (isset($_POST['voted'])){
 				$voted = $_POST['voted'];
 				$_SESSION['voted'] = $voted;
-				echo "Vote Recorded <br />";
+				echo "Vote Recorded.<br ?> <br />";
 			}
 			
-			$file = fopen("file.txt", "r+");
+			if ($file = fopen("file.txt", "r+")){
+			} else {
+				echo '<strong>Error reading file.</strong><br /><br />';
+			}
 		
 			$lines = array();
+			
 		
 			if ($file){
 				$i = 0;
@@ -90,7 +94,7 @@ session_start();
 					$i++;
 				}
 			}
-			
+					
 			$labels = array();
 			$labels[0] = "<strong>1. What is your favorite ice cream?</strong><br />Chocolate: ";
 			$labels[1] = "Vanilla: ";
