@@ -4,7 +4,7 @@
 ?>
 <div class="content" id="home">
 
-	<a href="http://cs313.nathantschultz.com/survey.php">Assignment #1: Survey</a>
+	<p><a href="http://cs313.nathantschultz.com/survey.php">Assignment #1: Survey</a></p>
 	
 
 </div> <!-- end of content -->
