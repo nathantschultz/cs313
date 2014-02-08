@@ -59,6 +59,7 @@ a:active { /* selected link */
 	padding: 25px;
 	overflow-y: scroll;
 	line-height: 1.5;	
+	color: black; /*try white*/
 }
 
 
