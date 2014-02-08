@@ -58,9 +58,31 @@ a:active { /* selected link */
 	height: 100%;
 	padding: 25px;
 	overflow-y: scroll;
+	
+}
+
+.content p {
+	font-size: 1.5em;
+	margin-top: 2em;
+	
+}
+
+#submitted {
+	font-size: 1.2em;
+	margin-top: .3em;
+}
+
+.content h1 {
+	margin-top: .5em;
+}
+
+img {
+	border:11px solid white;
+	width: 50%;
+	height: auto;
+	box-shadow: 5px 5px 25px black;
 }
 
 #welcome{
 	font-size: 6em;
-	margin-top: 3em;
 }

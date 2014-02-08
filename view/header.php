@@ -1,3 +1,10 @@
+<?php
+	require_once($_SERVER['DOCUMENT_ROOT']. '/../Database_Connections/recipe_db.php');
+	require_once($_SERVER['DOCUMENT_ROOT']. '/model.php');
+	require_once($_SERVER['DOCUMENT_ROOT']. '/helpers.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,6 +24,9 @@
 			<h1><a href="http://cs313.nathantschultz.com">The Recipe Blog</a></h1>
 			<ul>
 				<li><a href="http://cs313.nathantschultz.com?action=assignments">Assignments</a></li>
+				
+				<li><strong>Recipes:</strong></li>
+				<?php echo buildNav();?>
 			</ul>
 		</div>
 		

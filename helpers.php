@@ -34,7 +34,23 @@ function encodeTags ($string){
 
 
 
+function buildNav(){
+	$links = getLinks();
+		
+	if (is_array($links)){
+		$nav = "";
 
+		foreach ($links as $link){		
+			$nav .= "<li><a href='http://cs313.nathantschultz.com/?action=content&page_id=" . $link['post_id'] . "'>". $link['title'] . "</a>";
+		}
+		
+	} else {
+		$nav = "<li>Sorry, a critical error occurred.</li>";
+	}
+	
+	return $nav;
+	
+}
 
 
 function buildContent($page_id){
@@ -47,11 +63,10 @@ function buildContent($page_id){
 			
 		if (empty($contents)){
 			
-			$page = "<h1 id='welcome'>404 Error:</h1><h1 id='welcome'>Page not found</h1>";
+			$page = "<h1 id='welcome'>404 Error:</h1><h1>Page not found</h1>";
 		} 	else {
 			foreach ($contents as $content){
-				$page = $content['title'];
-				//$page = $content['aside1'] . $content['section'] . $content['aside2'];	 
+				$page = "<img src='/images/" . $content['image_name'] . ".png' alt='" . $content['title'] . "' >" . "<br /><h1>" . $content['title'] . "</h1><p id='submitted'><em>submitted by " . $content['name'] . "</em></p><p><strong>Difficulty: </strong>" . $content['difficulty'] . "</p><p><strong>Cooking time:</strong> " . $content['cooking_time'] . "</p><p><strong>Ingredients:</strong> " . $content['ingredients'] . "</p><p><strong>Directions:</strong> " . $content['directions'] . "</p>";
 			}
 		}
 	}

@@ -10,8 +10,8 @@
 */
 
 	require_once('../Database_Connections/recipe_db.php');
-	require('model.php');
-	require('helpers.php');
+	require_once('model.php');
+	require_once('helpers.php');
 	
 	// Get the action to perform
 	if (isset($_POST['action'])) {
