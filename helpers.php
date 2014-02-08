@@ -57,7 +57,7 @@ function buildContent($page_id){
 
 	//get contents of page
 	if ($page_id == 1){
-		$page = "<h1 id='welcome'>Welcome!</h1>";	
+		$page = "<h1 id='welcome'></h1>";	
 	} else {
 		$contents = getContent($page_id);
 			
@@ -75,7 +75,7 @@ function buildContent($page_id){
 	//echo $alerts;
 	//$alerts = "";
 	
-	echo "<div class='content' id='$page_id'>";
+	echo "<div class='content' id='c$page_id'>";
 	
 	//display content and footer
 	echo $page;

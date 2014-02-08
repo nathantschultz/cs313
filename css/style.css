@@ -53,12 +53,18 @@ a:active { /* selected link */
 .content {
 	float:left;
 	width: 70%;	
-	background: url(/images/home.png) fixed no-repeat; 
+	background: url(/images/blur.png) fixed no-repeat; 
 	background-size: cover;
 	height: 100%;
 	padding: 25px;
 	overflow-y: scroll;
-	
+	line-height: 1.5;	
+}
+
+
+#c1 {
+	background: url(/images/home.jpeg) fixed no-repeat; 
+	background-size: cover;
 }
 
 .content p {
