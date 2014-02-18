@@ -2,7 +2,7 @@
 // Display Header 
 include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 ?>
-<section class="plan">
+<section class="content">
 <h1>Profile</h1>
 
 <?php
@@ -15,11 +15,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 	}
 ?>
 
-<p><a href="http://www.nathantschultz.com/index.php?action=logout">Log out</a></p>
+<p><a href="http://cs313.nathantschultz.com/index.php?action=logout">Log out</a></p>
 </section>
-
-
-<?php 
-// Display Footer
-include $_SERVER['DOCUMENT_ROOT'] . '/view/footer.php'; 
-?>

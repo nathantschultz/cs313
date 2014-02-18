@@ -66,6 +66,7 @@ a:active { /* selected link */
 #c1 {
 	background: url(/images/home.jpeg) fixed no-repeat; 
 	background-size: cover;
+	font-size: 6em;
 }
 
 .content p {
@@ -88,8 +89,4 @@ img {
 	width: 50%;
 	height: auto;
 	box-shadow: 5px 5px 25px black;
-}
-
-#welcome{
-	font-size: 6em;
 }
