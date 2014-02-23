@@ -406,7 +406,7 @@ function updateContent($oldTitle, $title, $cooking_time, $difficulty, $ingredien
 	$flag = TRUE;
 	
 	$flag1 = true;
-	$flad2 = true;
+	$flag2 = true;
 	
 	//select footer links
 	try {
@@ -447,11 +447,11 @@ function updateContent($oldTitle, $title, $cooking_time, $difficulty, $ingredien
 		
 		
     	try {
-			$sql = "UPDATE $db.links SET `title`= :title, post_id = :post_id";
+			$sql = "UPDATE $db.links SET `title`= :title where post_id = :post_id";
 			$stmt = $link->prepare($sql);
 			
 			$stmt->bindValue(':title', $title);
-			$stmt->bindValue(':post_id', $post_id);
+			$stmt->bindValue(':post_id', $pageId);
 			$stmt->execute();
 			
 			$rowcount = $stmt->rowCount();
@@ -463,8 +463,9 @@ function updateContent($oldTitle, $title, $cooking_time, $difficulty, $ingredien
 		}		
 	}	
 
-	if ($rowcount < 1) {
-		error_log("rowcount < 1");
+	//Change flag if the insert failed
+	if($rowcount < 1) {
+		error_log("rowcount < 1 for updated");
 		$flag2 = FALSE; //The insert failed
 	}
 
@@ -495,6 +496,32 @@ function getTitle($id){
 	}
 }
 
+function search($searchTerm){
+	
+	//connect to database
+	global $link;
+	global $db;
+	
+	$term = "%" . $searchTerm . "%";
+	error_log("searchterm is: $searchTerm");
+	
+	//fetch info from database
+	try {
+		$sql = "select * from $db.links where title like :term";
+		$stmt = $link->prepare($sql);
+		
+		$stmt->bindValue(':term', $term);
+		
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		$stmt->closeCursor();
+		return $result;
+	} catch (PDOException $e){
+		echo 'failure';
+		return null;
+	}
+	
+}
 
 function getLinks(){
 	//connect to database

@@ -15,10 +15,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 	}
 	?>
 
-
 	<h1>Create a Content Page in HTML</h1>
 	
-	<form id="contentCreator" method="post" action="http://cs313.nathantschultz.com/index.php">
+	<form id="contentCreator" method="post" action="http://cs313.nathantschultz.com/index.php" enctype="multipart/form-data">
 		<h2>Title:</h2>
 		<input type="text" name="title" required /><br />
 		
@@ -36,8 +35,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 		<h2>Directions:</h2>
 		<textarea name="directions" rows="10" cols="120">Enter the directions here.</textarea>
 			
-		<h2>Image Name:</h2>
-		<input type="text" name="image_name" required /><br />
+		<h2>Image:</h2>
+		<!-- <input type="text" name="image_name" required /><br /> -->
+		<input type="file" name="file1"/><br />	
 			
 		<br>		
 		<h2>Create Post:</h2>

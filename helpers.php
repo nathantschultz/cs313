@@ -1,5 +1,24 @@
 <?php
 
+function upload_file($name) {
+    global $image_dir_path;
+    if (isset($_FILES[$name])) {
+        $filename = $_FILES[$name]['name'];
+        if (empty($filename)) {
+            return null;
+        }
+        $source = $_FILES[$name]['tmp_name'];
+        $target = $image_dir_path . DIRECTORY_SEPARATOR . $filename;
+        move_uploaded_file($source, $target);
+
+		return $filename;
+        // create the '400', '250', and '100' versions of the image
+        //process_image($image_dir_path, $filename);
+    }
+    
+    return null;
+}
+
 function hashPassword($password) {
 	$crypt = crypt($password, 'Ns');
 	return $crypt;
@@ -44,6 +63,26 @@ function createLink($id){
 	return $link;
 }
 
+function buildSearchResults($searchTerm){
+	
+	$headers = array();
+	$headers = search($searchTerm);
+	 
+	if(!empty($headers)){
+		$navigation = "<ul>";	 
+		foreach ($headers as $head){
+				$navigation .= "<li><h2><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2></li>";			
+		}
+		$navigation .= "</ul>";
+	
+	} else {
+		$navigation = 'Sorry, no results found.';
+	}
+	return $navigation;
+	
+	
+}
+
 function buildListOfContent(){
 	
 	$headers = array();
@@ -54,7 +93,7 @@ function buildListOfContent(){
 	if(is_array($headers)){
 		$navigation = "<ul>";	 
 		foreach ($headers as $head){
-				$navigation .= "<li><h1><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h1> <a href='http://cs313.nathantschultz.com/index.php?action=edit_content&amp;page_id=". $head['post_id'] ."'>Edit</a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_content&amp;page_id=". $head['post_id'] ."'>Delete</a></li>";			
+				$navigation .= "<li><h2><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2> <a href='http://cs313.nathantschultz.com/index.php?action=edit_content&amp;page_id=". $head['post_id'] ."'>Edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_content&amp;page_id=". $head['post_id'] ."'>Delete</a></li>";			
 		}
 		$navigation .= "</ul>";
 	
@@ -78,7 +117,7 @@ function buildUserProfile($id){
 			} else {
 				$admin = "NO";
 			}																																																						
-			$content .= "<h1>".$person['name']."</h1><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit</a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul>";   
+			$content .= "<h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul>";   
 		}
 	}
 	
@@ -101,7 +140,7 @@ function buildAdminProfile(){
 		} else {
 			$admin = "NO";
 		}
-		$content .= "<li><h1>".$person['name']."</h1><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit</a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul></li>";   	
+		$content .= "<li><h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul></li>";   	
 	}
 	return $content;
 }
@@ -128,19 +167,23 @@ function buildNav(){
 
 
 function buildContent($page_id){
+	$page = "";
 
 	//get contents of page
 	if ($page_id == 1){
-		$page = "<h1 id='welcome'></h1>";	
+		$page .= "<h1 id='welcome'></h1>";	
 	} else {
 		$contents = getContent($page_id);
 			
 		if (empty($contents)){
 			
-			$page = "<h1 id='welcome'>404 Error:</h1><h1>Page not found</h1>";
+			$page .= "<h1 id='welcome'>404 Error:</h1><h1>Page not found</h1>";
 		} 	else {
 			foreach ($contents as $content){
-				$page = "<img src='/images/" . $content['image_name'] . ".png' alt='" . $content['title'] . "' >" . "<br /><h1>" . $content['title'] . "</h1><p id='submitted'><em>submitted by " . $content['name'] . "</em></p><p><strong>Difficulty: </strong>" . $content['difficulty'] . "</p><p><strong>Cooking time:</strong> " . $content['cooking_time'] . "</p><p><strong>Ingredients:</strong> " . $content['ingredients'] . "</p><p><strong>Directions:</strong> " . $content['directions'] . "</p>";
+				if ($content['image_name']){
+					$page .= "<img src='/images/" . $content['image_name'] . "' alt='" . $content['title'] . "' >" . "<br />";
+				}
+				$page .= "<h1>" . $content['title'] . "</h1><p id='submitted'><em>submitted by " . $content['name'] . "</em></p><p><strong>Difficulty: </strong>" . $content['difficulty'] . "</p><p><strong>Cooking time:</strong> " . $content['cooking_time'] . "</p><p><strong>Ingredients:</strong> " . $content['ingredients'] . "</p><p><strong>Directions:</strong> " . $content['directions'] . "</p>";
 			}
 		}
 	}

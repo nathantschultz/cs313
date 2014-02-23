@@ -39,7 +39,18 @@
 			
 				<li><a href="http://cs313.nathantschultz.com?action=assignments">Assignments</a></li>
 				
+				
+				
+				<li>
+					<form id="search" method="post" action="http://cs313.nathantschultz.com/index.php">
+					    <input type="text" name="searchTerm" id="search" placeholder="Search">
+					    <input type="submit" name="submit" id="submit" value="Search">
+					    <input type="hidden" name="action" value="search">
+					</form>
+				</li>
+				
 				<li><strong>Recipes:</strong></li>
+				
 				<?php echo buildNav();?>
 			</ul>
 		</div>

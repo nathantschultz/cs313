@@ -31,7 +31,11 @@
 	
 	// Determine action to take
 	switch($action) {
-		
+		case 'search':
+			$_SESSION['searchTerm'] = cleanString($_POST['searchTerm']);	
+			header('Location: /view/search_results.php');
+			break;
+			
 		case 'create_account':
 			
 			header('Location: /view/createAccount.php');
@@ -303,7 +307,7 @@
 				$difficulty = cleanString($_POST['difficulty']); 
 				$ingredients = encodeTags($_POST['ingredients']); 
 				$directions = encodeTags($_POST['directions']); 
-				$image_name = cleanString($_POST['image_name']);
+				//$image_name = cleanString($_POST['image_name']);
 				$poster = $_SESSION['userId'];
 				
 				/*
@@ -315,7 +319,9 @@
 				$_SESSION['$alerts'] .= $image_name;
 				$_SESSION['$alerts'] .= $poster; 
 				*/ 
-
+				$image_dir = 'images';
+				$image_dir_path = getcwd() . DIRECTORY_SEPARATOR . $image_dir;
+				$image_name = upload_file('file1'); 
 				  
 				$problems = array();
 				
@@ -391,6 +397,14 @@
 				$_SESSION['$alerts'] .= $poster; 
 				*/ 
 
+
+				$image_dir = 'images';
+				$image_dir_path = getcwd() . DIRECTORY_SEPARATOR . $image_dir;
+				$uploaded_image_name = upload_file('file1');
+				
+				if (!$uploaded_image_name == null){
+					$image_name = $uploaded_image_name;
+				}
 				  
 				$problems = array();
 				

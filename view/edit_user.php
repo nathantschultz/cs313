@@ -44,8 +44,8 @@ foreach($people as $person){
       <br>
       
       <label for="admin">Admin:</label>
-	  <p><input type="radio" name="adminSelected" id="admin1" value="true" <?php if ($admin2){echo "checked='checked'";} ?>>Yes</p>
-      <p><input type="radio" name="adminSelected" id="admin2" value="0" <?php if (!$admin2){echo "checked='checked'";} ?>>No</p>
+	  <input type="radio" name="adminSelected" id="admin1" value="true" <?php if ($admin2){echo "checked='checked'";} ?>>Yes
+      <input type="radio" name="adminSelected" id="admin2" value="0" <?php if (!$admin2){echo "checked='checked'";} ?>>No <br />
       
       <label for="submit">&nbsp;</label>
       <input type="submit" name="submit" id="submit" value="Submit">
