@@ -11,7 +11,6 @@
 
 <form name="postNote" method="post" action="CreatePost">
 	<textarea rows="6" cols="35" name="postContent" id="postContent"></textarea>
-	<input type="hidden" value="${param.username}" name="username" />
 	<input type="submit" value="Submit" /> 
 </form>
 
