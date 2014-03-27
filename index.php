@@ -2,10 +2,10 @@
 
 //Start session
 	$lifetime = 0;
-	session_set_cookie_params($lifetime, '/', 'cs313.nathantschultz.com');
+	session_set_cookie_params($lifetime, '/', 'recipe.nathantschultz.com');
 	session_start();
 	
-	require_once('../Database_Connections/recipe_db.php');
+	require_once('../../Database_Connections/recipe_db.php');
 	require_once('model.php');
 	require_once('helpers.php');
 	
@@ -473,17 +473,7 @@
     		}
     		break;
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		case 'assignments':
 			header('Location: /view/assignments.php');
 			break;

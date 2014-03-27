@@ -17,9 +17,9 @@
 
 
 
-	<p><a href="http://cs313.nathantschultz.com/survey.php">Assignment #1: Survey</a></p>
-	<p><a href="http://cs313.nathantschultz.com:8080/DiscussionForum/SignIn.jsp">JSP Forum</a></p>
-	<p><a href="http://cs313.nathantschultz.com:8080/MovieTweets/">Movie Tweets using AJAX</a></p>
+	<p><a href="http://recipe.nathantschultz.com/survey.php">Assignment #1: Survey</a></p>
+	<p><a href="http://recipe.nathantschultz.com:8080/DiscussionForum/SignIn.jsp">JSP Forum</a></p>
+	<p><a href="http://recipe.nathantschultz.com:8080/MovieTweets/">Movie Tweets using AJAX</a></p>
 
 
 

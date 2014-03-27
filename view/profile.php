@@ -30,6 +30,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 	}
 ?>
 
-<p><a href="http://cs313.nathantschultz.com/index.php?action=logout">Log out</a></p>
+<p><a href="http://recipe.nathantschultz.com/index.php?action=logout">Log out</a></p>
 </section>
 

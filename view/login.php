@@ -27,7 +27,7 @@ if(isset($_SESSION['$alerts'])){
 	
 
 	<h1>Login:</h1>
-	<form id="People" method="post" action="http://cs313.nathantschultz.com/index.php">
+	<form id="People" method="post" action="http://recipe.nathantschultz.com/index.php">
       <label for="email">Email:</label>
       <input type="email" name="email" id="email" required>
       <br>
@@ -39,12 +39,12 @@ if(isset($_SESSION['$alerts'])){
 	  <input type="hidden" name="action" id="action" value="check_credentials">
     </form>
     
-    <p><a href="http://cs313.nathantschultz.com/index.php?action=create_account">Create Account</a></p>
+    <p><a href="http://recipe.nathantschultz.com/index.php?action=create_account">Create Account</a></p>
 
     
 </section>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://cs313.nathantschultz.com/js/jquery.validate.min.js"></script>
-<script src="http://cs313.nathantschultz.com/js/registrationRules.js"></script>
+<script src="http://recipe.nathantschultz.com/js/jquery.validate.min.js"></script>
+<script src="http://recipe.nathantschultz.com/js/registrationRules.js"></script>

@@ -45,12 +45,12 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://cs313.nathantschultz.com">CS 313</a>
+          <a class="navbar-brand" href="http://recipe.nathantschultz.com">CS 313</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="http://cs313.nathantschultz.com">Home</a></li>
-            <li><a href="http://cs313.nathantschultz.com?action=assignments">Assignments</a></li>
+            <li class="active"><a href="http://recipe.nathantschultz.com">Home</a></li>
+            <li><a href="http://recipe.nathantschultz.com?action=assignments">Assignments</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -156,7 +156,7 @@ session_start();
 		
 		
 		
-		<a href="http://cs313.nathantschultz.com/survey.php">Back to survey</a>
+		<a href="http://recipe.nathantschultz.com/survey.php">Back to survey</a>
 	
 	
 	

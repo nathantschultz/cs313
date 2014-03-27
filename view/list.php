@@ -16,6 +16,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 	?>
 
 <h1>Content Pages:</h1>
-<a href="http://cs313.nathantschultz.com/index.php?action=create_content">Create New Page</a>
+<a href="http://recipe.nathantschultz.com/index.php?action=create_content">Create New Page</a>
 <?php echo buildListOfContent();?>
 </section>

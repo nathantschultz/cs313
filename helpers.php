@@ -71,7 +71,7 @@ function buildSearchResults($searchTerm){
 	if(!empty($headers)){
 		$navigation = "<ul>";	 
 		foreach ($headers as $head){
-				$navigation .= "<li><h2><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2></li>";			
+				$navigation .= "<li><h2><a href='http://recipe.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2></li>";			
 		}
 		$navigation .= "</ul>";
 	
@@ -93,7 +93,7 @@ function buildListOfContent(){
 	if(is_array($headers)){
 		$navigation = "<ul>";	 
 		foreach ($headers as $head){
-				$navigation .= "<li><h2><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2> <a href='http://cs313.nathantschultz.com/index.php?action=edit_content&amp;page_id=". $head['post_id'] ."'>Edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_content&amp;page_id=". $head['post_id'] ."'>Delete</a></li>";			
+				$navigation .= "<li><h2><a href='http://recipe.nathantschultz.com/?action=content&amp;page_id=" . $head['post_id'] . "'>". $head['title'] . "</a></h2> <a href='http://recipe.nathantschultz.com/index.php?action=edit_content&amp;page_id=". $head['post_id'] ."'>Edit </a> <a href='http://recipe.nathantschultz.com/index.php?action=confirm_delete_content&amp;page_id=". $head['post_id'] ."'>Delete</a></li>";			
 		}
 		$navigation .= "</ul>";
 	
@@ -117,7 +117,7 @@ function buildUserProfile($id){
 			} else {
 				$admin = "NO";
 			}																																																						
-			$content .= "<h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul>";   
+			$content .= "<h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://recipe.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://recipe.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul>";   
 		}
 	}
 	
@@ -131,7 +131,7 @@ function buildAdminProfile(){
 	
 	//display list of users with editing abilitiy for each part
 	$people = getPeople();
-	$content = "<h1><a href='http://cs313.nathantschultz.com/index.php?action=list_content'>EDIT CONTENT</a></h1><h1>USERS:</h1><ul>";
+	$content = "<h1><a href='http://recipe.nathantschultz.com/index.php?action=list_content'>EDIT CONTENT</a></h1><h1>USERS:</h1><ul>";
 	$admin = null;
 	
 	foreach ($people as $person){
@@ -140,7 +140,7 @@ function buildAdminProfile(){
 		} else {
 			$admin = "NO";
 		}
-		$content .= "<li><h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://cs313.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://cs313.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul></li>";   	
+		$content .= "<li><h2>".$person['name']."</h2><ul><li>EMAIL: ". $person['email']."</li><li>PASSWORD: ***********</li><li>ADMIN: ".$admin."</li><li><a href='http://recipe.nathantschultz.com/index.php?action=edit_user&amp;page_id=".$person['user_id']."'>edit </a> <a href='http://recipe.nathantschultz.com/index.php?action=confirm_delete_user&amp;page_id=".$person['user_id']."'>delete</a></li></ul></li>";   	
 	}
 	return $content;
 }
@@ -154,7 +154,7 @@ function buildNav(){
 		$nav = "";
 
 		foreach ($links as $link){		
-			$nav .= "<li><a href='http://cs313.nathantschultz.com/?action=content&amp;page_id=" . $link['post_id'] . "'>". $link['title'] . "</a>";
+			$nav .= "<li><a href='http://recipe.nathantschultz.com/?action=content&amp;page_id=" . $link['post_id'] . "'>". $link['title'] . "</a>";
 		}
 		
 	} else {
@@ -213,9 +213,3 @@ function buildContent($page_id){
 
 
 ?>
-
-
-
-	
-	
-

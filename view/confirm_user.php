@@ -20,6 +20,6 @@ $uId = $_SESSION['confirm_id'];
 
 
 <h1>Are you sure?</h1>
-<p><a href="http://cs313.nathantschultz.com/index.php?action=delete_user&amp;page_id=<?php echo $uId?>">Delete</a></p>
-<p><a href="http://cs313.nathantschultz.com/index.php?action=profile">Cancel</a></p>
+<p><a href="http://recipe.nathantschultz.com/index.php?action=delete_user&amp;page_id=<?php echo $uId?>">Delete</a></p>
+<p><a href="http://recipe.nathantschultz.com/index.php?action=profile">Cancel</a></p>
 </section>

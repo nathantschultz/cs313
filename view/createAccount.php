@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 	?>
 
 	<h1>Create Account</h1>
-	<form id="People" method="post" action="http://cs313.nathantschultz.com/index.php">
+	<form id="People" method="post" action="http://recipe.nathantschultz.com/index.php">
       <label for="firstname">First Name:</label>
       <input type="text" name="name" id="firstname" required>
       <br>
@@ -34,5 +34,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/view/header.php';
 </section>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://cs313.nathantschultz.com/js/jquery.validate.min.js"></script>
-<script src="http://cs313.nathantschultz.com/js/registrationRules.js"></script>
+<script src="http://recipe.nathantschultz.com/js/jquery.validate.min.js"></script>
+<script src="http://recipe.nathantschultz.com/js/registrationRules.js"></script>
